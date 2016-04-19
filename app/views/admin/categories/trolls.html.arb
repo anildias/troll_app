@@ -1,0 +1,12 @@
+table_for assigns[:category].trolls do
+  column :id
+  column "name" do |troll|
+  	link_to troll.name, admin_troll_path(troll)
+  end
+  column "image" do |troll|
+  	image_tag(troll.image_url, :width => 100, :height => 100)
+  end
+  column "Categories" do |troll|
+      troll.categories.map{|category| "<a href=#{admin_category_path(category)}>#{category.name}</a>"}.join(' , ').html_safe
+    end
+end

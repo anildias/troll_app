@@ -1,0 +1,12 @@
+<% @categories.each do |category| %>
+	<li onclick="location.href='<%= category_path(category) %>';">
+		<img src="<%= category_image(category) %>" width="282" height="344">
+		<div class="post-info">
+			<div class="post-basic-info">
+				<h3><a href="#"><%= category.name %></a></h3>
+				<span><label><%= category.trolls.length %> trolls</label></span>
+				<p>Lorem Ipsum is simply dummy text of the printing & typesetting industry.</p>
+			</div>
+		</div>
+	</li>
+<% end %>

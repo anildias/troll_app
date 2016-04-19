@@ -1,0 +1,21 @@
+<% @trolls.each do |troll| %>
+	<li>
+		<img src="<%= troll.image.url %>" width="282" height="344">
+		<div class="post-info">
+			<div class="post-basic-info">
+				<h3><a href="#"><%= troll.name %></a></h3>
+				<span><label><%= troll.categories.map{|category| "<a href=#{category_path(category)}>#{category.name}</a>"}.join(' , ').truncate(140).html_safe %></label></span>
+				<p>Lorem Ipsum is simply dummy text of the printing & typesetting industry.</p>
+			</div>
+			<div class="post-info-rate-share">
+				<div class="rateit">
+					<span> </span>
+				</div>
+				<div class="post-share">
+					<span> </span>
+				</div>
+				<div class="clear"> </div>
+			</div>
+		</div>
+	</li>
+<% end %>
